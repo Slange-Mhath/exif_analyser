@@ -16,8 +16,8 @@ def main(exif_log_path, output_file):
     sorted_occurence_of_keys = {k: v for k, v in sorted(occurence_of_keys.items(), key=lambda item: item[1], reverse=True)}
     f = open(output_file, 'w')
     for k, v in sorted_occurence_of_keys.items():
-        print(f"The field {k} occurs {v} times")
-        f.write(f"The field {k} occurs {v} times")
+        print(f"{k} occurs {v} times")
+        f.write(f"{k} occurs {v} times \n")
     f.close()
     return occurence_of_keys
 
