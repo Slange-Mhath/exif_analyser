@@ -15,10 +15,11 @@ def main(exif_log_path, output_file):
                     occurence_of_keys[key] += 1
     sorted_occurence_of_keys = {k: v for k, v in sorted(occurence_of_keys.items(), key=lambda item: item[1], reverse=True)}
     f = open(output_file, 'w')
+    print("Start processing exif log")
     for k, v in sorted_occurence_of_keys.items():
-        print(f"{k} occurs {v} times")
         f.write(f"{k} occurs {v} times \n")
     f.close()
+    print(f"{output_file} generated")
     return occurence_of_keys
 
 
